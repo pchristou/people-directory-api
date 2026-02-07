@@ -11,7 +11,11 @@ builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 // Repositories
 builder.Services.AddSingleton<PeopleRepository>();
-
+// Enable lowercase urls to promote consistency
+builder.Services.Configure<RouteOptions>(options => 
+{
+    options.LowercaseUrls = true;
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

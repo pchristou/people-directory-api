@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Repositories;
 
 [ApiController]
-[Route("api/v1/people")]
+[Route("api/v1/[controller]")]
 public class PeopleController(PeopleRepository repository) : ControllerBase
 {
     [HttpGet]
