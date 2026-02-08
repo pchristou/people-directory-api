@@ -10,7 +10,7 @@ builder.Services.AddOpenApi();
 // Swagger
 builder.Services.AddSwaggerGen();
 // Repositories
-builder.Services.AddSingleton<PeopleRepository>();
+builder.Services.AddSingleton<UserRepository>();
 // Enable lowercase urls to promote consistency
 builder.Services.Configure<RouteOptions>(options => 
 {

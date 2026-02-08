@@ -1,6 +1,6 @@
 namespace PeopleDirectory.Models;
 
-public class PersonDto
+public class UserDto
 {
     public int Id { get; set; }
     public required string FirstName { get; set; }

@@ -5,7 +5,7 @@ using Repositories;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-public class PeopleController(PeopleRepository repository) : ControllerBase
+public class UsersController(UserRepository repository) : ControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> GetAll()
