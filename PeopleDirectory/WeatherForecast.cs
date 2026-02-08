@@ -1,4 +1,4 @@
-namespace AiimiPeopleDirectory;
+namespace PeopleDirectory;
 
 public class WeatherForecast
 {

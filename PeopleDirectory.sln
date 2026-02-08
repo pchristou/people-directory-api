@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiimiPeopleDirectory", "AiimiPeopleDirectory\AiimiPeopleDirectory.csproj", "{9B5F6E37-9C0D-456E-8FCA-D5392D64014A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleDirectory", "PeopleDirectory\PeopleDirectory.csproj", "{9B5F6E37-9C0D-456E-8FCA-D5392D64014A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

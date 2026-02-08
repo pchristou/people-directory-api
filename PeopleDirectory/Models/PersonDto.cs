@@ -1,4 +1,4 @@
-namespace AiimiPeopleDirectory.Models;
+namespace PeopleDirectory.Models;
 
 public class PersonDto
 {

@@ -1,4 +1,4 @@
-using AiimiPeopleDirectory.Repositories;
+using PeopleDirectory.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

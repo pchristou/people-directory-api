@@ -1,4 +1,4 @@
-namespace AiimiPeopleDirectory.Controllers;
+namespace PeopleDirectory.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 using Repositories;

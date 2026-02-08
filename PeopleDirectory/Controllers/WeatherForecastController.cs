@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AiimiPeopleDirectory.Controllers;
+namespace PeopleDirectory.Controllers;
 
 [ApiController]
 [Route("[controller]")]

@@ -1,4 +1,4 @@
-namespace AiimiPeopleDirectory.Repositories;
+namespace PeopleDirectory.Repositories;
 
 using Models;
 using Extensions;

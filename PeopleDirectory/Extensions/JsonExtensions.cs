@@ -1,4 +1,4 @@
-namespace AiimiPeopleDirectory.Extensions;
+namespace PeopleDirectory.Extensions;
 
 using System.Text.Json;
 
