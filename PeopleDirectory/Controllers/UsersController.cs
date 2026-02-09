@@ -11,9 +11,9 @@ using Repositories;
 public class UsersController(UserRepository repository) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] UserDto person)
+    public async Task<IActionResult> Create([FromBody] UserDto user)
     {
-        var created = await repository.AddAsync(person);
+        var created = await repository.AddAsync(user);
 
         return CreatedAtAction(
             nameof(GetById),
@@ -24,12 +24,12 @@ public class UsersController(UserRepository repository) : ControllerBase
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var person = await repository.GetById(id);
+        var user = await repository.GetById(id);
 
-        if (person is null)
+        if (user is null)
             return NotFound();
 
-        return Ok(person);
+        return Ok(user);
     }
     
     [HttpGet("search")]

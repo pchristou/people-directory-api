@@ -14,15 +14,15 @@ public class UserRepository
         _filePath = Path.Combine(env.ContentRootPath, "Data", "users.json");
     }
 
-    public async Task<UserDto> AddAsync(UserDto person)
+    public async Task<UserDto> AddAsync(UserDto user)
     {
-        if (person is null)
-            throw new ArgumentNullException(nameof(person));
+        if (user is null)
+            throw new ArgumentNullException(nameof(user));
 
         var people = await GetAll();
 
-        person.Id = people.Any() ? people.Max(p => p.Id) + 1 : 1;
-        people.Add(person);
+        user.Id = people.Any() ? people.Max(p => p.Id) + 1 : 1;
+        people.Add(user);
 
         var json = JsonSerializer.Serialize(
             people,
@@ -30,7 +30,7 @@ public class UserRepository
 
         await File.WriteAllTextAsync(_filePath, json);
 
-        return person;
+        return user;
     }
     
     public async Task<UserDto?> GetById(int id)
