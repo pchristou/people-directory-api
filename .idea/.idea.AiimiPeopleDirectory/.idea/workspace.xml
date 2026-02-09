@@ -9,11 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f25bae0-246a-4161-8eea-df61244dbc09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PeopleDirectory/Exceptions/DuplicateEmailException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PeopleDirectory/directory-api.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiimiPeopleDirectory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiimiPeopleDirectory/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Data/users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleDirectory/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleDirectory/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1770417016508</updated>
-      <workItem from="1770417017780" duration="23094000" />
+      <workItem from="1770417017780" duration="23899000" />
     </task>
     <task id="LOCAL-00001" summary="build: initial commit">
       <option name="closed" value="true" />
@@ -244,7 +244,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770638910096</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feature: Exception handling">
+      <option name="closed" value="true" />
+      <created>1770680190227</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1770680190227</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor: rename">
+      <option name="closed" value="true" />
+      <created>1770680195770</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1770680195770</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,11 +294,12 @@
     <MESSAGE value="build: IDE config, rename project" />
     <MESSAGE value="refactor: rename people to user" />
     <MESSAGE value="build: rename" />
-    <MESSAGE value="refactor: rename" />
     <MESSAGE value="feature: Get user by name" />
     <MESSAGE value="feature: POST to add users" />
     <MESSAGE value="refactor: rename to maintain consistency" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename to maintain consistency" />
+    <MESSAGE value="feature: Exception handling" />
+    <MESSAGE value="refactor: rename" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
