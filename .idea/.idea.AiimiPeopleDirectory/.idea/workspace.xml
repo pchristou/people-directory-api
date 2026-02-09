@@ -9,10 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f25bae0-246a-4161-8eea-df61244dbc09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PeopleDirectory/Constants/SearchConstants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PeopleDirectory/Data/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PeopleDirectory/Data/users.seed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PeopleDirectory/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiimiPeopleDirectory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiimiPeopleDirectory/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PeopleDirectory/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Models/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Models/UserDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PeopleDirectory/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PeopleDirectory/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Repositories/UserRepository.cs" afterDir="false" />
     </list>
@@ -123,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1770417016508</updated>
-      <workItem from="1770417017780" duration="16484000" />
+      <workItem from="1770417017780" duration="17700000" />
     </task>
     <task id="LOCAL-00001" summary="build: initial commit">
       <option name="closed" value="true" />
@@ -221,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770558001756</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feature: Get user by name">
+      <option name="closed" value="true" />
+      <created>1770634308017</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1770634308017</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +265,8 @@
     <MESSAGE value="refactor: rename people to user" />
     <MESSAGE value="build: rename" />
     <MESSAGE value="refactor: rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename" />
+    <MESSAGE value="feature: Get user by name" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: Get user by name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

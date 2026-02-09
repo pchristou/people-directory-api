@@ -1,8 +1,10 @@
+using System.Text.Json;
+
 namespace PeopleDirectory.Repositories;
 
 using Models;
 using Extensions;
-
+    
 public class UserRepository
 {
     private readonly string _filePath;
@@ -12,15 +14,29 @@ public class UserRepository
         _filePath = Path.Combine(env.ContentRootPath, "Data", "users.json");
     }
 
-    private async Task<List<UserDto>> GetAll()
+    public async Task<UserDto> AddAsync(UserDto person)
     {
-        if (!File.Exists(_filePath))
-            return [];
-        
-        string json = await File.ReadAllTextAsync(_filePath);
+        if (person is null)
+            throw new ArgumentNullException(nameof(person));
 
-        return JsonExtensions.Deserialize<List<UserDto>>(json)
-               ?? [];
+        var people = await GetAll();
+
+        person.Id = people.Any() ? people.Max(p => p.Id) + 1 : 1;
+        people.Add(person);
+
+        var json = JsonSerializer.Serialize(
+            people,
+            new JsonSerializerOptions { WriteIndented = true });
+
+        await File.WriteAllTextAsync(_filePath, json);
+
+        return person;
+    }
+    
+    public async Task<UserDto?> GetById(int id)
+    {
+        var people = await GetAll();
+        return people.FirstOrDefault(p => p.Id == id);
     }
 
     public async Task<List<UserDto>> SearchByName(string searchTerm, int limit)
@@ -39,5 +55,16 @@ public class UserRepository
                 p.LastName.StartsWith(searchTerm, StringComparison.OrdinalIgnoreCase))
             .Take(limit)
             .ToList();
+    }
+    
+    private async Task<List<UserDto>> GetAll()
+    {
+        if (!File.Exists(_filePath))
+            return [];
+        
+        string json = await File.ReadAllTextAsync(_filePath);
+
+        return JsonExtensions.Deserialize<List<UserDto>>(json)
+               ?? [];
     }
 }

@@ -1,0 +1,1 @@
+`Users.seed.json` is the base state, allowing a clean set of data when the Api is restarted. `Users.json` is the 'active' file being used during runtime.

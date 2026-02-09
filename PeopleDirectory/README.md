@@ -1,0 +1,1 @@
+The web API for a small application providing details for users containined within the directory.

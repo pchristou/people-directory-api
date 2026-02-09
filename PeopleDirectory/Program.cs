@@ -38,6 +38,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     app.MapOpenApi();
+    
+    SeedUsersIfDevelopment(app);
+
 }
 
 app.UseHttpsRedirection();
@@ -54,3 +57,18 @@ app.UseEndpoints(endpoints =>
 });
 
 app.Run();
+
+// Provide a clean slate for our json upon startup
+static void SeedUsersIfDevelopment(WebApplication app)
+{
+    if (!app.Environment.IsDevelopment())
+        return;
+
+    var env = app.Services.GetRequiredService<IWebHostEnvironment>();
+    var dataDir = Path.Combine(env.ContentRootPath, "Data");
+
+    var seedPath = Path.Combine(dataDir, "users.seed.json");
+    var runtimePath = Path.Combine(dataDir, "users.json");
+
+    File.Copy(seedPath, runtimePath, overwrite: true);
+}
