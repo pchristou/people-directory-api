@@ -1,4 +1,5 @@
 using System.Text.Json;
+using PeopleDirectory.Exceptions;
 
 namespace PeopleDirectory.Repositories;
 
@@ -14,18 +15,24 @@ public class UserRepository
         _filePath = Path.Combine(env.ContentRootPath, "Data", "users.json");
     }
 
-    public async Task<UserDto> AddAsync(UserDto user)
+    public async Task<UserDto> CreateUser(UserDto user)
     {
         if (user is null)
             throw new ArgumentNullException(nameof(user));
+        
+        var users = await GetAll();
 
-        var people = await GetAll();
+        var emailExists = users.Any(u =>
+            u.Email.Equals(user.Email, StringComparison.OrdinalIgnoreCase));
 
-        user.Id = people.Any() ? people.Max(p => p.Id) + 1 : 1;
-        people.Add(user);
+        if (emailExists)
+            throw new DuplicateEmailException(user.Email);
+        
+        user.Id = users.Any() ? users.Max(p => p.Id) + 1 : 1;
+        users.Add(user);
 
         var json = JsonSerializer.Serialize(
-            people,
+            users,
             new JsonSerializerOptions { WriteIndented = true });
 
         await File.WriteAllTextAsync(_filePath, json);
