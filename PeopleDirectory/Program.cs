@@ -2,6 +2,20 @@ using PeopleDirectory.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var frontEndPolicy = "_frontEndPolicy";
+
+// 2. Add CORS services
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: frontEndPolicy,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200") // Your Angular URL
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
 // Add services to the container.
 // Add controllers
 builder.Services.AddControllers();
@@ -29,6 +43,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
+app.UseCors(frontEndPolicy);
 
 app.UseAuthorization();
 

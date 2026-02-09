@@ -12,7 +12,7 @@ public class UserRepository
         _filePath = Path.Combine(env.ContentRootPath, "Data", "users.json");
     }
 
-    public async Task<List<UserDto>> GetAll()
+    private async Task<List<UserDto>> GetAll()
     {
         if (!File.Exists(_filePath))
             return [];
@@ -23,12 +23,21 @@ public class UserRepository
                ?? [];
     }
 
-    public async Task<UserDto?> GetById(int id)
+    public async Task<List<UserDto>> SearchByName(string searchTerm, int limit)
     {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+            return new List<UserDto>();
+
         // We get all people then filter by the requested id. Only done this way for simplicity given the dataset is tiny.
-        // In a production system, we would use a database and query against a table (or document for NoSQL) with an indexed
+        // In a production system, we would use a database and filter against a table (or document for NoSQL) with an indexed
         // id to pull out just the required record
-        List<UserDto> people = await GetAll();
-        return people.FirstOrDefault(p => p.Id == id);
+        var people = await GetAll();
+
+        return people
+            .Where(p =>
+                p.FirstName.StartsWith(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                p.LastName.StartsWith(searchTerm, StringComparison.OrdinalIgnoreCase))
+            .Take(limit)
+            .ToList();
     }
 }

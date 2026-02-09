@@ -1,3 +1,5 @@
+using PeopleDirectory.Constants;
+
 namespace PeopleDirectory.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
@@ -7,20 +9,12 @@ using Repositories;
 [Route("api/v1/[controller]")]
 public class UsersController(UserRepository repository) : ControllerBase
 {
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
+    [HttpGet("search")]
+    public async Task<IActionResult> Search([FromQuery] string name, [FromQuery] int limit = SearchConstants.DefaultLimit)
     {
-        var people = await repository.GetAll();
-        return Ok(people);
-    }
+        limit = Math.Clamp(limit, SearchConstants.MinLimit, SearchConstants.MaxLimit);
 
-    [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetById(int id)
-    {
-        var person = await repository.GetById(id);
-        if (person is null)
-            return NotFound();
-
-        return Ok(person);
+        var results = await repository.SearchByName(name, limit);
+        return Ok(results);
     }
 }

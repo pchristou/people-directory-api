@@ -9,7 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f25bae0-246a-4161-8eea-df61244dbc09" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Controllers/PeopleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Controllers/UserController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PeopleDirectory/Constants/SearchConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AiimiPeopleDirectory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiimiPeopleDirectory/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Models/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Models/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleDirectory/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleDirectory/Repositories/UserRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +37,17 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="build: IDE config, rename project" />
-        <option name="rewordedMessage" value="build: IDE config, rename project" />
+        <option name="originalMessage" value="refactor: rename people to user" />
+        <option name="rewordedMessage" value="refactor: rename" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="b74b91b717ffb69b99fdd54161964310fc2e105d" />
+    <option name="onto" value="0cb32f63148b9e84326d2f97c59a4d077dd936c5" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6cff58531c0f6ed75abfe1eff81ca50d7f23d56df16e019f0d1f642d67e572d/EndpointMethodInfoApiExplorerServiceCollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7dbb9a3db228e0bd84da909f6b101129efb81472a17142a1caf458856b45326/JsonSerializer.Read.String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PeopleDirectory/Constants/SearchConstants.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -117,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1770417016508</updated>
-      <workItem from="1770417017780" duration="10118000" />
+      <workItem from="1770417017780" duration="16484000" />
     </task>
     <task id="LOCAL-00001" summary="build: initial commit">
       <option name="closed" value="true" />
@@ -207,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770557320806</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="build: rename">
+      <option name="closed" value="true" />
+      <created>1770558001756</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1770558001756</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +254,9 @@
     <MESSAGE value="build: rename project" />
     <MESSAGE value="build: IDE config, rename project" />
     <MESSAGE value="refactor: rename people to user" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename people to user" />
+    <MESSAGE value="build: rename" />
+    <MESSAGE value="refactor: rename" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
