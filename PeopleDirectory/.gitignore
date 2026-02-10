@@ -12,3 +12,7 @@ obj/
 
 # App Settings (keep the main one, ignore the secret-heavy ones)
 appsettings.Development.json
+
+# JetBrains Rider / ReSharper
+*.DotSettings.user
+_ReSharper*/
