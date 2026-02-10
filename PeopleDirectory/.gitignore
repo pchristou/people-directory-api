@@ -1,0 +1,14 @@
+# .NET Core
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+
+# User-specific files
+.idea/
+*.swp
+
+# App Settings (keep the main one, ignore the secret-heavy ones)
+appsettings.Development.json
