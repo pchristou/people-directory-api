@@ -1,16 +1,16 @@
 # People Directory API
-A .NET Web API providing user directory management.The frontend Angular repository can be found [here](https://github.com/pchristou/people-directory).
+A .NET Web API providing user directory management. The frontend Angular repository can be found [here](https://github.com/pchristou/people-directory).
 
 ![People Directory Homepage](PeopleDirectory/directory-api.png)
 
 ## Architecture
 The project follows a decoupled layered architecture:
 
-Controllers: Handle HTTP requests and routing.
+- Controllers: Handle HTTP requests and routing.
 
-Repositories: Contain business logic and data orchestration.
+- Repositories: Contain business logic and data orchestration.
 
-Infrastructure: Abstraction layer (IFileWrapper) to handle persistent storage.
+- Infrastructure: Abstraction layer (IFileWrapper) to handle persistent storage.
 
 ## Data Persistence
 
