@@ -1,4 +1,6 @@
+using PeopleDirectory.Infrastructure;
 using PeopleDirectory.Repositories;
+using PhysicalFileWrapper = PeopleDirectory.Infrastructure.PhysicalFileWrapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +25,10 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 // Swagger
 builder.Services.AddSwaggerGen();
-// Repositories
-builder.Services.AddSingleton<UserRepository>();
+// Register the wrapper for the real file system, swapped for a mock when unit testing
+builder.Services.AddScoped<IFileWrapper, PhysicalFileWrapper>();
+// Register the repository
+builder.Services.AddScoped<UserRepository>();
 // Enable lowercase urls to promote consistency
 builder.Services.Configure<RouteOptions>(options => 
 {

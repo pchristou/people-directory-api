@@ -1,5 +1,6 @@
 using System.Text.Json;
 using PeopleDirectory.Exceptions;
+using PeopleDirectory.Infrastructure;
 
 namespace PeopleDirectory.Repositories;
 
@@ -8,10 +9,11 @@ using Extensions;
     
 public class UserRepository
 {
+    private readonly IFileWrapper _file;
     private readonly string _filePath;
 
-    public UserRepository(IWebHostEnvironment env)
-    {
+    public UserRepository(IWebHostEnvironment env, IFileWrapper file) {
+        _file = file;
         _filePath = Path.Combine(env.ContentRootPath, "Data", "users.json");
     }
 
@@ -35,7 +37,7 @@ public class UserRepository
             users,
             new JsonSerializerOptions { WriteIndented = true });
 
-        await File.WriteAllTextAsync(_filePath, json);
+        await _file.WriteAllTextAsync(_filePath, json);
 
         return user;
     }
@@ -66,10 +68,10 @@ public class UserRepository
     
     private async Task<List<UserDto>> GetAll()
     {
-        if (!File.Exists(_filePath))
+        if (!_file.Exists(_filePath))
             return [];
         
-        string json = await File.ReadAllTextAsync(_filePath);
+        string json = await _file.ReadAllTextAsync(_filePath);
 
         return JsonExtensions.Deserialize<List<UserDto>>(json)
                ?? [];
