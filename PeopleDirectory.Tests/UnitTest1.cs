@@ -14,7 +14,6 @@ public class UserRepositoryTests
     private readonly Mock<IFileWrapper> _fileMock;
     private readonly Mock<IWebHostEnvironment> _envMock;
     private readonly UserRepository _repository;
-    private const string FakePath = "C:/App/Data/users.json";
 
     public UserRepositoryTests()
     {
